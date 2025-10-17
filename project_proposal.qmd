@@ -49,7 +49,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 ```
 # Dataset
-```{python}
+```{python, echo: false}
 data = pd.read_csv("data/bmw_worldwide_sales.csv")
 data.head(10)
 ```
@@ -117,3 +117,7 @@ plt.show()
 | | – project_proposal.qmd: Project problem statement and proposal
 | | – presentation.qmd: Final project presentation
 | | – README.md: Overview and setup instructions
+
+# AI Usage Disclosure
+
+In the development of this project, AI tools were used for idea exploration, debugging, and code assistance. All AI usage was performed ethically, and all final analyses, interpretations, and conclusions are my own. These tools were leveraged solely to support productivity and learning, not to replace critical thinking or personal contribution.
