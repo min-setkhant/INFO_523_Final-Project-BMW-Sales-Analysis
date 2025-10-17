@@ -1,0 +1,31 @@
+# python-related
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+*.venv
+.env/
+venv/
+env/
+# Quarto and project output
+_site/           # rendered site (optional if using gh-pages, otherwise include)
+*_cache/         # cache folders
+*.Rhistory
+*.RData
+*.Rproj.user
+# Data files
+data/*.csv
+data/*.xlsx
+data/*.parquet
+data/*.sqlite
+data/*.db
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+# VS Code
+.vscode/
+*.code-workspace
+# Jupyter
+.ipynb_checkpoints/

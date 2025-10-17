@@ -1,0 +1,119 @@
+---
+title: "BMW Car Price Analysis & Prediction"
+subtitle: "Proposal"
+author:
+  - name: "Min Set Khant"
+    affiliations:
+      - name: "College of Information Science, University of Arizona"
+description: "Analyze, visualize, and predict BMW car prices using multi-regional sales data from 2010–2024, exploring how features such as model, region, color, engine size, and transmission influence market value and sales performance."
+format:
+  revealjs:
+    theme: black
+    transition: fade
+    slide-number: true
+    toc: true
+    center: false
+execute:
+  echo: true
+  warning: false
+  error: false
+---
+# **Project Description**
+**BMW Car Price Analysis & Prediction**
+
+This project focuses on uncovering patterns and relationships in BMW’s global car sales data from 2010 to 2024. The primary objective is to analyze how different factors such as model, region, color, engine size, and transmission type influence both **sales performance** and **pricing behavior**.  
+
+The dataset provides a unique opportunity to explore market dynamics, evaluate product performance across regions, and develop a simple predictive model for price estimation.  
+Through detailed visualization and statistical analysis, this project aims to generate actionable business insights for automotive market strategy.
+
+# **Goals**
+1. **Explore** BMW sales trends and model popularity across global regions.
+2. **Identify** how car features (e.g., engine size, color, transmission, fuel type) affect price and sales volume.
+3. **Visualize** correlations between market regions, customer preferences, and price distribution.
+4. **Predict** car price using regression techniques as an optional modeling component.
+
+# **Proposed Dataset:**
+
+**Source:** Kaggle - [BMW Worldwide Sales Records (2010–2024)](https://www.kaggle.com/datasets/ahmadrazakashif/bmw-worldwide-sales-records-20102024)
+
+The dataset contains BMW’s sales and specifications data across multiple regions worldwide. It includes over 30,000 entries and features such as car model, engine size, year, region, transmission type, fuel type, mileage, color, price, and sales volume.
+
+# Example of the dataset preview, 
+```{python}
+#| label: load-pkgs
+#| message: false
+#| echo: false
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+```
+# Dataset
+```{python}
+data = pd.read_csv("data/bmw_worldwide_sales.csv")
+data.head(10)
+```
+# Dataset Overview
+```{python,  label= dataset-summary,message =false,echo= false }
+data.describe()
+```
+The dataset contains key attributes that represent performance indicators such as price and sales volume.
+The presence of attributes like Engine_Size_L, Fuel_Type, and Transmission makes it ideal for visualization and regression modeling.
+
+# Example Explorations
+## BMW Sales by Model and Region
+```{python, labe= hist-targets, fig-cap = "BMW Sales Volume by Model and Region", fig-align =center, echo: false}
+region_model_sales = data.groupby(["Region", "Model"])["Sales_Volume"].sum().reset_index()
+pivot_region_model = region_model_sales.pivot(index="Region", columns="Model", values="Sales_Volume").fillna(0)
+pivot_region_model.plot(kind="bar", stacked=True, figsize=(10,6), colormap="coolwarm")
+plt.title("BMW Sales by Model and Region", fontsize=14, weight="bold")
+plt.xlabel("Region")
+plt.ylabel("Sales Volume")
+plt.xticks(rotation=0)
+plt.legend(title="Model", bbox_to_anchor=(1.05,1))
+plt.tight_layout()
+plt.show()
+```
+# Engine Size vs. Sales Volume
+```{python}
+#| label: engine-vs-sales
+#| fig-cap: "Relationship between Engine Size and Sales Volume by Region"
+#| fig-align: center
+#| echo: false
+import seaborn as sns
+import matplotlib.pyplot as plt
+plt.figure(figsize=(8,6))
+sns.scatterplot(data=data, x="Engine_Size_L", y="Sales_Volume", hue="Region", s=70)
+plt.title("Engine Size vs. Sales Volume by Region", fontsize=14, weight="bold")
+plt.xlabel("Engine Size (L)")
+plt.ylabel("Sales Volume")
+plt.grid(True, linestyle="--", alpha=0.6)
+plt.tight_layout()
+plt.show()
+```
+# Project Schedule
+| **Week**                           | **Timeline**                              | **Tasks & Deliverables**                                                                                                         |
+| ---------------------------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **Week 0 (Oct 06)**                | Pick and share a project idea in Slack    | Identify the BMW dataset and confirm project focus on car price and sales analysis.                                              |
+| **Week 2 (Oct 20)**                | Develop proposal and repository structure | Set up project repository with folders (`data`, `notebooks`, `scripts`, `visuals`, etc.) and begin writing the initial proposal. |
+| **Week 3 (Oct 27)**                | Submit draft proposal + Peer review       | Submit draft of BMW project proposal and conduct peer review on classmates’ proposals.                                           |
+| **Week 4 (Nov 03)**                | Finish peer review + Revise proposal      | Update and resubmit revised proposal based on peer feedback and instructor comments.                                             |
+| **Week 5 (Nov 10)**                | Apply instructor feedback                 | Incorporate instructor’s feedback into the finalized proposal and confirm project scope.                                         |
+| **Weeks 6–9 (Nov 17 – Dec 07)**    | Project development phase                 | Perform data cleaning, visualization, exploratory analysis, and optional predictive modeling on BMW sales data.                  |
+| **Week 9 (Dec 08)**                | Peer code review                          | Conduct code review and testing with classmates for improvement and validation.                                                  |
+| **Week 10 (Dec 15 – Finals Week)** | Final presentation and report submission  | Present final project (BMW Car Price Analysis & Prediction) and submit the final Quarto report.                                  |
+# Project Organization
+
+| | FINAL-PROJECT-SET
+| | — 📁 data: Raw and cleaned BMW datasets from Kaggle
+| | — 📁 notebooks: Jupyter or Quarto notebooks for analysis
+| | — 📁 visuals: All visualizations and charts
+| | — 📁 scripts: Python scripts for data processing and analysis
+| | — 📁 presentation_files: Quarto presentation files
+| | — 📁 outputs: Final visuals, tables, and reports
+| | — 📁 extra: Additional documentation if needed
+| | – 📄 _quarto.yml: Quarto site metadata and configuration
+| | – 📄 .gitignore: Files and folders ignored by Git
+| | – 📄 project_proposal.qmd: Project problem statement and proposal
+| | – 📄 presentation.qmd: Final project presentation
+| | – 📄 README.md: Overview and setup instructions
