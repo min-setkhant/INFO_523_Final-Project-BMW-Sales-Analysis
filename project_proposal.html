@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Min Set Khant">
-  <title>BMW Car Price Analysis &amp; Prediction</title>
+  <title>INFO-523-DATA MININIG_Final Project ‘BMW Car Price Analysis &amp; Prediction’</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -196,7 +196,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">BMW Car Price Analysis &amp; Prediction</h1>
+  <h1 class="title">INFO-523-DATA MININIG_Final Project ‘<strong>BMW Car Price Analysis &amp; Prediction</strong>’</h1>
   <p class="subtitle">Proposal</p>
 
 <div class="quarto-title-authors">
@@ -261,10 +261,10 @@ Through detailed visualization and statistical analysis, this project aims to ge
 
 <section id="dataset" class="title-slide slide level1 center">
 <h1>Dataset</h1>
-<div id="7e415623" class="cell" data-execution_count="2">
+<div id="00a02e1e" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>data <span class="op">=</span> pd.read_csv(<span class="st">"data/bmw_worldwide_sales.csv"</span>)</span>
 <span id="cb1-2"><a href=""></a>data.head(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div class="cell-output cell-output-display" data-execution_count="37">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -448,9 +448,9 @@ Through detailed visualization and statistical analysis, this project aims to ge
 
 <section id="dataset-overview" class="title-slide slide level1 center">
 <h1>Dataset Overview</h1>
-<div id="d69d1c43" class="cell" data-execution_count="3">
+<div id="66f83854" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>data.describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell-output cell-output-display" data-execution_count="38">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -558,7 +558,7 @@ Through detailed visualization and statistical analysis, this project aims to ge
 </section>
 <section id="bmw-sales-by-model-and-region" class="slide level2">
 <h2>BMW Sales by Model and Region</h2>
-<div id="93186597" class="cell" data-execution_count="4">
+<div id="75ead0e7" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>region_model_sales <span class="op">=</span> data.groupby([<span class="st">"Region"</span>, <span class="st">"Model"</span>])[<span class="st">"Sales_Volume"</span>].<span class="bu">sum</span>().reset_index()</span>
 <span id="cb3-2"><a href=""></a>pivot_region_model <span class="op">=</span> region_model_sales.pivot(index<span class="op">=</span><span class="st">"Region"</span>, columns<span class="op">=</span><span class="st">"Model"</span>, values<span class="op">=</span><span class="st">"Sales_Volume"</span>).fillna(<span class="dv">0</span>)</span>
 <span id="cb3-3"><a href=""></a>pivot_region_model.plot(kind<span class="op">=</span><span class="st">"bar"</span>, stacked<span class="op">=</span><span class="va">True</span>, figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">6</span>), colormap<span class="op">=</span><span class="st">"coolwarm"</span>)</span>
@@ -655,18 +655,18 @@ Through detailed visualization and statistical analysis, this project aims to ge
 <section id="project-organization" class="title-slide slide level1 center">
 <h1>Project Organization</h1>
 <div class="line-block">| FINAL-PROJECT-SET<br>
-| — 📁 data: Raw and cleaned BMW datasets from Kaggle<br>
-| — 📁 notebooks: Jupyter or Quarto notebooks for analysis<br>
-| — 📁 visuals: All visualizations and charts<br>
-| — 📁 scripts: Python scripts for data processing and analysis<br>
-| — 📁 presentation_files: Quarto presentation files<br>
-| — 📁 outputs: Final visuals, tables, and reports<br>
-| — 📁 extra: Additional documentation if needed<br>
-| – 📄 _quarto.yml: Quarto site metadata and configuration<br>
-| – 📄 .gitignore: Files and folders ignored by Git<br>
-| – 📄 project_proposal.qmd: Project problem statement and proposal<br>
-| – 📄 presentation.qmd: Final project presentation<br>
-| – 📄 README.md: Overview and setup instructions</div>
+| — data: Raw and cleaned BMW datasets from Kaggle<br>
+| — notebooks: Jupyter or Quarto notebooks for analysis<br>
+| — visuals: All visualizations and charts<br>
+| — scripts: Python scripts for data processing and analysis<br>
+| — presentation_files: Quarto presentation files<br>
+| — outputs: Final visuals, tables, and reports<br>
+| — extra: Additional documentation if needed<br>
+| – _quarto.yml: Quarto site metadata and configuration<br>
+| – .gitignore: Files and folders ignored by Git<br>
+| – project_proposal.qmd: Project problem statement and proposal<br>
+| – presentation.qmd: Final project presentation<br>
+| – README.md: Overview and setup instructions</div>
 
 </section>
     </div>

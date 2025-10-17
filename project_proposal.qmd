@@ -1,5 +1,5 @@
 ---
-title: "BMW Car Price Analysis & Prediction"
+title: "INFO-523-DATA MININIG_Final Project '**BMW Car Price Analysis & Prediction**' "
 subtitle: "Proposal"
 author:
   - name: "Min Set Khant"
@@ -105,15 +105,15 @@ plt.show()
 # Project Organization
 
 | | FINAL-PROJECT-SET
-| | — 📁 data: Raw and cleaned BMW datasets from Kaggle
-| | — 📁 notebooks: Jupyter or Quarto notebooks for analysis
-| | — 📁 visuals: All visualizations and charts
-| | — 📁 scripts: Python scripts for data processing and analysis
-| | — 📁 presentation_files: Quarto presentation files
-| | — 📁 outputs: Final visuals, tables, and reports
-| | — 📁 extra: Additional documentation if needed
-| | – 📄 _quarto.yml: Quarto site metadata and configuration
-| | – 📄 .gitignore: Files and folders ignored by Git
-| | – 📄 project_proposal.qmd: Project problem statement and proposal
-| | – 📄 presentation.qmd: Final project presentation
-| | – 📄 README.md: Overview and setup instructions
+| | — data: Raw and cleaned BMW datasets from Kaggle
+| | — notebooks: Jupyter or Quarto notebooks for analysis
+| | — visuals: All visualizations and charts
+| | — scripts: Python scripts for data processing and analysis
+| | — presentation_files: Quarto presentation files
+| | — outputs: Final visuals, tables, and reports
+| | — extra: Additional documentation if needed
+| | – _quarto.yml: Quarto site metadata and configuration
+| | – .gitignore: Files and folders ignored by Git
+| | – project_proposal.qmd: Project problem statement and proposal
+| | – presentation.qmd: Final project presentation
+| | – README.md: Overview and setup instructions
